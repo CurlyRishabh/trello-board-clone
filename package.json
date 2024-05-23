@@ -1,0 +1,14 @@
+{
+  "name": "trello-dom-project",
+  "version": "1.0.0",
+  "description": "Trello workspace clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rishabh Singh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
