@@ -1,31 +1,25 @@
-const listCard = require("./API/list-card");
+import listCard from "../api/list-card.js";
 
 function getCard(id) {
     const url = listCard(id);
-    const cardListPromise = new Promise((resolve, reject) => {
-        fetch(url)
-            .then((response) => {
-                if (response.ok) {
-                    resolve(response.json());
-                } else {
-                    throw new Error(
-                        "Error while fetching list with status: " +
-                            response.status(404)
-                    );
-                }
-            })
-            .catch((error) => reject(error));
-    });
-
-    return cardListPromise;
+    console.log(url);
+    return fetch(url)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .catch((err) => console.log(err));
 }
 
 // getCard("664b237f405652d4bc76cdc8")
 //     .then((data) => {
+//         console.log(data);
 //         data.forEach(element => {
-//             console.log(element)
+//             console.log(element.id, element.name)
 //         });
 //     })
 //     .catch((err) => console.log(err));
 
-module.exports = getCard;
+export default getCard;
+// module.exports = getCard;

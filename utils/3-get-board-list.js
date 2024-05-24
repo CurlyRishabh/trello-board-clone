@@ -1,27 +1,17 @@
-const boardList = require("./API/board-list");
-
+import boardList from "../api/board-list.js";
 function getBoardList(id) {
     const url = boardList(id);
-    const boardListPromise = new Promise((resolve, reject) => {
-        fetch(url)
-            .then((response) => {
-                if (response.ok) {
-                    resolve(response.json());
-                } else {
-                    throw new Error(
-                        "Error while fetching list with status: " +
-                            response.status
-                    );
-                }
-            })
-            .catch((error) => reject(error));
-    });
-
-    return boardListPromise;
+    return fetch(url)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .catch((err) => console.log(err));
 }
 
-// getBoardList("H5RjsxUq")
+// getBoardList("Q2oBKUuz")
 //     .then((data) => console.log(data))
 //     .catch((err) => console.log(err));
 
-module.exports = getBoardList;
+export default getBoardList;

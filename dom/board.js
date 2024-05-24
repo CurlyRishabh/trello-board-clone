@@ -1,5 +1,6 @@
-function boardItemSidebar(boardName) {
+function boardItemSidebar(boardName, boardId) {
     // Create the parent div
+    console.log(boardName, boardId);
     const sidebarBoardItem = document.createElement("div");
     sidebarBoardItem.className = "sidebar-board-item";
 
@@ -12,36 +13,27 @@ function boardItemSidebar(boardName) {
 
     // Create the anchor element
     const anchorElement = document.createElement("a");
-    anchorElement.href = "#";
+    anchorElement.href = `./pages/board-info.html?board=${boardId}`;
     anchorElement.textContent = boardName;
 
     // Append the colored div and anchor element to the parent div
     sidebarBoardItem.appendChild(coloredDiv);
     sidebarBoardItem.appendChild(anchorElement);
 
-    // Append the parent div to the desired location in the DOM
     return sidebarBoardItem;
 }
 
-function boardItemContainer(boardName){
-    //parent div
-    const contentBoard = document.createElement('div');
-
-    contentBoard.style.backgroundColor = '#005485';
-    contentBoard.style.height = '100px'
+function boardItemContainer(boardName, boardId) {
     //anchor element
-    const anchorElement = document.createElement('a');
-    anchorElement.href = '#'
+    const anchorElement = document.createElement("a");
+    anchorElement.href = `./pages/board-info.html?board=${boardId}`;
     anchorElement.textContent = boardName;
-    
-    anchorElement.style.textDecoration = 'none';
-    
 
-    contentBoard.appendChild(anchorElement)
+    anchorElement.style.backgroundColor = "#005485";
+    anchorElement.style.height = "100px";
+    anchorElement.style.textDecoration = "none";
 
-    return contentBoard;
-    
+    return anchorElement;
 }
 
-
-export default {boardItemSidebar, boardItemContainer};
+export default { boardItemSidebar, boardItemContainer };

@@ -7,4 +7,4 @@ function createBoardApi(boardName) {
     return `https://api.trello.com/1/boards/?name=${boardName}&key=${apikey}&token=${token}`;
 }
 
-module.exports = createBoardApi;
+export default createBoardApi;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardInfo</title>
+    <link rel="stylesheet" href="board-style.css">
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="board-script.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div style="display: flex;">
+            <p>Trello</p>
+            <p>Workspace</p>
+            <p>Recent</p>
+            <p>Starred</p>
+            <p>Template</p>
+            <p>Create</p>
+
+        </div>
+        <div style="display: flex;">
+            <p>SearchBar</p>
+            <p>Profile</p>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="sidebar-container">
+            <div class="sidebar-workspace">
+                <div>
+                    CoolWorkspace
+                </div>
+                <button id="sidebar-button" onclick="sidebar_workspace_button()"> < </button>
+            </div>
+            <div>
+                <p>Boards</p>
+                <p>Members</p>
+                <p>Workspace setting</p>
+            </div>
+            <div class="sidebar-board-list">
+            </div>
+        </div>
+
+        <div class="content-container">
+            <p>Boards</p>
+            <div class="content-list-container">
+                <div class="content-list-item">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div>List1</div>
+                        <button>X</button>
+                      </div>
+                    <div class="content-list-item-card">
+                        <div class="content-container-card">
+                            card1
+                        </div>
+                        <div class="content-container-card">
+                            card2
+                        </div>
+                    </div>
+                   
+                    <div class="content-container-add-card">+ Add a card</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../button-script.js"></script>
+
+</html>

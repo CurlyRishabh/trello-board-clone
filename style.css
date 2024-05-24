@@ -1,5 +1,5 @@
 *{
-    border: 1px solid red;
+    border: 1px solid red;   
     box-sizing: border-box;
     color: white;
 
@@ -17,12 +17,30 @@ body{
 }
 
 .main-container{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+    /* display: grid;
+    grid-template-columns: 1fr 4fr; */
+    display: flex;
 
 }
 .sidebar-container{
     background-color: #131f27;
+    width: 20%;
+    overflow-x: hidden;
+    padding: 1px;
+}
+
+.sidebar-workspace{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+#sidebar-button{
+    position: absolute;
+    right: 0px;
+    width: 20px;
+    background-color: rgb(18, 97, 134);
+    color:white;
 }
 .sidebar-board-item{
     display: flex;
@@ -34,7 +52,9 @@ body{
 }
 
 .content-container{
+    width: 100%;
     padding: 0% 5%;
+
 }
 
 .content-board-container{
