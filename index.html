@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trello Clone</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="script.js"></script>
 </head>
+
 <body>
-    
+    <div class="header">
+        <div style="display: flex;">
+            <p>Trello</p>
+            <p>Workspace</p>
+            <p>Recent</p>
+            <p>Starred</p>
+            <p>Template</p>
+            <p>Create</p>
+
+        </div>
+        <div style="display: flex;">
+            <p>SearchBar</p>
+            <p>Profile</p>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="sidebar-container">
+            <div>CoolWorkspace</div>
+            <div>
+                <p>Boards</p>
+                <p>Members</p>
+                <p>Workspace setting</p>
+            </div>
+            <div class="sidebar-board-list">
+            </div>
+        </div>
+
+        <div class="content-container">
+            <h1>CoolWorkspace</h1>
+            <p>Boards</p>
+            <div class="content-board-container">
+
+            </div>
+        </div>
 </body>
+<script>
+    const divElement = document.querySelector('.make-div');
+</script>
+
 </html>
