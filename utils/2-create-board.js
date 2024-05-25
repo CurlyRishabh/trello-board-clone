@@ -1,4 +1,5 @@
-const createBoardApi = require("./API/create-board");
+// const createBoardApi = require("./API/create-board");
+import createBoardApi from "../api/create-board.js";
 
 function createBoard(boardName) {
     const api = createBoardApi(boardName);
@@ -10,4 +11,4 @@ function createBoard(boardName) {
 //     .then((data) => console.log(data))
 //     .catch((error) => console.error(error));
 
-module.exports = createBoard;
+export default createBoard;

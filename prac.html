@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Form</title>
+<style>
+    #boardForm {
+        display: none;
+    }
+    #boardForm.visible {
+        display: block;
+    }
+</style>
+</head>
+<body>
+    <button id="showFormBtn">Create Board</button>
+    <div id="boardForm">
+        <form id="boardNameForm">
+            <label for="boardName">Board Name:</label>
+            <input type="text" id="boardName" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("showFormBtn").addEventListener("click", function() {
+            var boardForm = document.getElementById("boardForm");
+            boardForm.classList.toggle("visible");
+        });
+
+        document.getElementById("boardNameForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            var boardName = document.getElementById("boardName").value;
+            // Here you can do whatever you want with the boardName, like sending it to the server
+            console.log("Board name submitted:", boardName);
+            // Reset form
+            document.getElementById("boardNameForm").reset();
+            // Hide form after submission
+            document.getElementById("boardForm").classList.remove("visible");
+        });
+    </script>
+</body>
+</html>

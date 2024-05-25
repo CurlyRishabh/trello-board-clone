@@ -8,23 +8,25 @@
     <link rel="stylesheet" href="board-style.css">
     <link rel="stylesheet" href="../style.css">
     <script type="module" src="board-script.js"></script>
+    <script type="module" src="../script.js"></script>
 </head>
 
 <body>
 
-    <div class="header">
-        <div style="display: flex;">
-            <p>Trello</p>
-            <p>Workspace</p>
-            <p>Recent</p>
-            <p>Starred</p>
-            <p>Template</p>
-            <p>Create</p>
+        <div class="header">
+        <div class="center-flex">
+            <img src="../assets/trello.png" alt="TRELLO" style="height: 30px; background-color: #a1adbb;">
 
         </div>
-        <div style="display: flex;">
-            <p>SearchBar</p>
-            <p>Profile</p>
+        <div class="header-create-btn-container">
+            <button id="show-form-btn" class="submit-btn">Create Board</button>
+            <div id="board-form">
+                <form id="board-name-form">
+                    <label for="board-name">Board Name</label>
+                    <input type="text" id="board-name" required>
+                    <button type="submit" class="submit-btn" style="border-radius: 5px;">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
     <div class="main-container">
@@ -68,5 +70,21 @@
     </div>
 </body>
 <script src="../button-script.js"></script>
+<script>
+    function sidebar_workspace_button() {
+    const buttonEle = document.getElementById("sidebar-button");
+    const ele = document.querySelector(".sidebar-container");
+
+    if (buttonEle.innerText == "<") {
+        ele.style.width = "20px";
+        buttonEle.innerText = ">";
+        ele.style.backgroundColor = "white";
+    } else {
+        ele.style.width = "20%";
+        buttonEle.innerText = "<";
+        ele.style.backgroundColor = "#747d87";
+    }
+}
+</script>
 
 </html>

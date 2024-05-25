@@ -1,5 +1,4 @@
-const deleteBoardApi = require("../API/delete-board");
-
+import deleteBoardApi from "../api/delete-board.js";
 // const idBoard = "664846f8dd8a305e12f3d297";
 
 function deleteBoard(boardId = process.argv[2]) {
@@ -22,4 +21,4 @@ function deleteBoard(boardId = process.argv[2]) {
 //     )
 //     .catch((err) => console.error("Error deleting board:", err));
 deleteBoard()
-module.exports = deleteBoard;
+export default deleteBoard;

@@ -1,19 +1,77 @@
+:root{
+    --primary-color: #a1adbb;
+    --secondary-color: #0067a3;
+    --tertiary-color: #747d87;
+    --btn-color: #095480;
+}
 *{
     border: 1px solid red;   
     box-sizing: border-box;
     color: white;
-
 }
+
+.center-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 body{
-    background-color: rgba(18, 18, 18, 0.971);
+
+     background-color: var(--primary-color);
+}
+
+.submit-btn{
+    background-color: var(--secondary-color);
+}
+.submit-btn:hover{
+    background-color: var(--btn-color);
 }
 
 .header{
     display: flex;
     justify-content: space-between;
 }
-.header div{
-    gap: 10px
+
+.header-create-btn-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 20%;
+}
+
+#show-form-btn{
+    width: 200px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+#board-form {
+    display: none;
+ 
+}
+#board-form.visible {
+    display: flex;
+    position: absolute;
+    top:35px;
+    
+}
+
+#board-name-form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    row-gap: 4px;
+    background-color: var(--tertiary-color);
+    
+}
+
+#board-name{
+    background-color: white;
+    color: var(--tertiary-color);
+    height: 2rem;
 }
 
 .main-container{
@@ -23,7 +81,7 @@ body{
 
 }
 .sidebar-container{
-    background-color: #131f27;
+    background-color: var(--tertiary-color);
     width: 20%;
     overflow-x: hidden;
     padding: 1px;
@@ -39,7 +97,7 @@ body{
     position: absolute;
     right: 0px;
     width: 20px;
-    background-color: rgb(18, 97, 134);
+    background-color: var(--secondary-color);
     color:white;
 }
 .sidebar-board-item{
