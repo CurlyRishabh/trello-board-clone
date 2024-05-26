@@ -1,22 +1,14 @@
-const createListApi = require("../API/create-list-api");
-
+// const createListApi = require("../API/create-list-api");
+import createListApi from "../api/create-list-api.js";
 function createList(boardId, name) {
     const url = createListApi(boardId, name);
-    return fetch(url, { method: "POST" });
+    return fetch(url, { method: "POST" })
+        .then((response) => response.json())
+        .catch((err) => console.error(err));
 }
 
-// createList("Q2oBKUuz", "makesTea")
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))
-//     .catch((err) => console.error(err));
-// createList("Q2oBKUuz", "makesMilk")
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))
-//     .catch((err) => console.error(err));
+// createList("IKDS0g8e", "rishabh")
+// .then(data => console.log(data));
 
-// createList("Q2oBKUuz", "makesCooffe")
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))
-//     .catch((err) => console.error(err));
-
-module.exports = createList;
+// module.exports = createList;
+export default createList;

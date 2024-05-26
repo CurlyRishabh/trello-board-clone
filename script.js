@@ -1,6 +1,6 @@
 // script.js
 import board from "./dom/board.js";
-// import getAllBoard from "./utils/get-all-board.js";
+import getAllBoard from "./utils/get-all-board.js";
 
 let allBoard = [{ name: "Cool", id: "66478339562d4ffb01309cd8" },
   { name: "KOK", id: "664c72a48e3a11dfa19ac09f" },
@@ -48,6 +48,6 @@ function createContainerBoardList(boardLists) {
 
 // custom hardCoded data
 createSidebarBoardList(allBoard);
-createContainerBoardList(allBoard);
+// createContainerBoardList(allBoard);
 
 export default renderTrelloBoard;

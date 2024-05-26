@@ -1,4 +1,5 @@
-const createCardApi = require("../API/create-card-api");
+// const createCardApi = require("../API/create-card-api");
+import createCardApi from "../api/create-card-api,js";
 
 function createCard(listId,cardName) {
     const url = createCardApi(listId, cardName);
@@ -10,4 +11,5 @@ function createCard(listId,cardName) {
     });
 }
 
-module.exports = createCard;
+// module.exports = createCard;
+export default createCard;

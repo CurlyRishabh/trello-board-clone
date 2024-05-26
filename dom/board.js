@@ -1,3 +1,14 @@
+
+function createPageUrl(boardId){
+    const url = new URL(window.location.href);
+    const protocol = url.protocol; // Get the protocol (http: or https:)
+    const hostname = url.hostname; // Get the hostname (e.g., 127.0.0.1)
+    const port = url.port; // Get the port (e.g., 5500)
+
+    // Construct the href attribute with the complete URL including protocol, hostname, and port
+    return`${protocol}//${hostname}:${port}/pages/board-info.html?board=${boardId}`;
+}
+
 function boardItemSidebar(boardName, boardId) {
     // Create the parent div
     console.log(boardName, boardId);
@@ -13,7 +24,10 @@ function boardItemSidebar(boardName, boardId) {
 
     // Create the anchor element
     const anchorElement = document.createElement("a");
-    anchorElement.href = `./pages/board-info.html?board=${boardId}`;
+    const url = new URL(window.location.href);
+    console.log("host", url.hostname);
+
+    anchorElement.href = createPageUrl(boardId);
     anchorElement.textContent = boardName;
 
     // Append the colored div and anchor element to the parent div
@@ -26,7 +40,9 @@ function boardItemSidebar(boardName, boardId) {
 function boardItemContainer(boardName, boardId) {
     //anchor element
     const anchorElement = document.createElement("a");
-    anchorElement.href = `./pages/board-info.html?board=${boardId}`;
+   
+    anchorElement.href = createPageUrl(boardId);
+
     anchorElement.textContent = boardName;
 
     anchorElement.style.backgroundColor = "#005485";
