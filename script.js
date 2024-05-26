@@ -44,7 +44,7 @@ function createContainerBoardList(boardLists) {
 
 
 
-// renderTrelloBoard();
+renderTrelloBoard();
 
 // custom hardCoded data
 createSidebarBoardList(allBoard);

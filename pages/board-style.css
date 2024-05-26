@@ -1,22 +1,78 @@
-.board-info{
+:root {
+    --primary-color: #a1adbb;
+    --secondary-color: #0067a3;
+    --tertiary-color: #747d87;
+    --btn-color: #095480;
+}
+
+.board-info {
     width: 200px;
 }
-.content-list-container{
+
+.content-container {
+    width: 100%;
+    padding: 0% 5%;
     display: flex;
+    overflow-x: auto;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.del-btn {
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    color: var(--secondary-color);
+    font-size: small;
+}
+
+.content-list-container {
+    display: flex;
+    align-items: flex-start;
     column-gap: 20px;
 }
 
-.content-list-item{
+.content-list-item-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.content-list-item {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
     background-color: #101204;
-    width: 25%;
+    width: 158px;
     border-radius: 10%;
     padding: 5px;
+    position: relative;
+
 }
 
-.content-container-card{
+.content-container-card {
     background-color: #22272b;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-card-form {
+    flex-direction: column;
+    row-gap: 5px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+#card-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+#card-name {
+    width: 100%;
+    height: 3rem;
+    color: black;
 }

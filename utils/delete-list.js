@@ -1,4 +1,8 @@
-const deleteListApi = require("../API/delete-list-api");
+// const deleteListApi = require("../API/delete-list-api");
+
+import deleteListApi from "../api/delete-list-api.js";
+
+
 
 function deleteList(listId) {
     const url = deleteListApi(listId);
@@ -13,4 +17,4 @@ function deleteList(listId) {
 //     .then((text) => console.log(text))
 //     .catch((err) => console.error(err));
 
-module.exports = deleteList;
+export default deleteList;

@@ -24,6 +24,7 @@ body{
 
 .submit-btn{
     background-color: var(--secondary-color);
+    border-radius: 5px;
 }
 .submit-btn:hover{
     background-color: var(--btn-color);

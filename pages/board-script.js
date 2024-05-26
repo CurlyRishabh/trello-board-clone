@@ -38,6 +38,6 @@ function renderBoardListCard() {
     }
 }
 
-// renderBoardListCard();
+renderBoardListCard();
 
 export {renderBoardListCard, createListCard, getparam}

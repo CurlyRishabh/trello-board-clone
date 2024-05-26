@@ -20,6 +20,7 @@ function initializeBoardForm() {
             console.log(boardId, listName)
             createList(boardId,listName)
                 .then((data) => {
+                    document.querySelector(".content-list-container").innerHTML= '';
                     renderBoardListCard();
                 })
                 .catch((error) => console.error(error));
@@ -32,4 +33,4 @@ function initializeBoardForm() {
 }
 
 // Call the function to initialize the board form behavior
-// initializeBoardForm();
+initializeBoardForm();

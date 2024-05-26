@@ -5,7 +5,6 @@ function createPageUrl(boardId){
     const hostname = url.hostname; // Get the hostname (e.g., 127.0.0.1)
     const port = url.port; // Get the port (e.g., 5500)
 
-    // Construct the href attribute with the complete URL including protocol, hostname, and port
     return`${protocol}//${hostname}:${port}/pages/board-info.html?board=${boardId}`;
 }
 
