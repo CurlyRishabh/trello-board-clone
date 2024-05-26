@@ -20,5 +20,5 @@ function deleteBoard(boardId = process.argv[2]) {
 //         console.log("Board deleted successfully with status:", res.status)
 //     )
 //     .catch((err) => console.error("Error deleting board:", err));
-deleteBoard()
+// deleteBoard()
 export default deleteBoard;

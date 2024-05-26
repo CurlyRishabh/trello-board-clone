@@ -1,3 +1,5 @@
+import renderTrelloBoard from "../script.js";
+import deleteBoard from "../utils/delete-board.js";
 
 function createPageUrl(boardId){
     const url = new URL(window.location.href);
@@ -38,17 +40,38 @@ function boardItemSidebar(boardName, boardId) {
 
 function boardItemContainer(boardName, boardId) {
     //anchor element
+    const outerDiv = document.createElement('div')
     const anchorElement = document.createElement("a");
    
+    outerDiv.style.display = 'flex';
+    outerDiv.style.position =  'relative';
+    anchorElement.style.width = '200px';
+    outerDiv.style.width = '200px';
+
+
     anchorElement.href = createPageUrl(boardId);
-
     anchorElement.textContent = boardName;
-
     anchorElement.style.backgroundColor = "#005485";
     anchorElement.style.height = "100px";
     anchorElement.style.textDecoration = "none";
+    anchorElement.className = 'board-item'
+    // Create the button
+    const button = document.createElement("button");
+    button.className = "del-board-btn center-flex";
+    const buttonText = document.createTextNode("X");
 
-    return anchorElement;
+    const closeBtn = () => {
+        deleteBoard(boardId);
+        renderTrelloBoard();
+        outerDiv.remove();
+
+    };
+
+    button.appendChild(buttonText);
+    button.addEventListener("click", closeBtn);
+    outerDiv.appendChild(anchorElement)
+    outerDiv.appendChild(button)
+    return outerDiv;
 }
 
 export default { boardItemSidebar, boardItemContainer };

@@ -16,6 +16,7 @@ const createCard = (cardName, cardId) => {
     // Create the button
     const button = document.createElement("button");
     button.className = "del-btn center-flex";
+    button.id = "card-btn-id"
     const buttonText = document.createTextNode("X");
 
     const closeBtn = () => {
@@ -144,15 +145,15 @@ function createCardForm(listId, cardContainerDiv){
         //event handler
         button.addEventListener('click',(e)=>{
             e.preventDefault();
-            const value = input.value;
+            const value = input.value.trim();
             input.value = ''
             form.style.display = 'none';
-
+            if(value){
             createCardList(listId, value).then((data)=>{
 
                 const ele = createCard(value, data.id);
                 cardContainerDiv.appendChild(ele);
-            });
+            });}
             
         })
         form.appendChild(input);

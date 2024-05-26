@@ -36,27 +36,47 @@
 .content-list-item-card {
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 10px;
 }
 
 .content-list-item {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 20px;
     background-color: #101204;
-    width: 158px;
+    width: 200px;
     border-radius: 10%;
-    padding: 5px;
+    padding: 15px 10px;
+
     position: relative;
 
 }
 
 .content-container-card {
     background-color: #22272b;
+    border: 1px solid #22272b;
+    font-size: 0.8rem;
     border-radius: 5px;
+    padding: 4px 0px;
+    padding-left: 5px;
+    height: 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+#card-btn-id{
+    display: none;
+}
+
+.content-container-card:hover{
+    border: 1px solid var(--primary-color);
+    #card-btn-id{
+        display: flex;
+    }
+}
+
+
 
 .create-card-form {
     flex-direction: column;
