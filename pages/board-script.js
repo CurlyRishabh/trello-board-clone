@@ -1,5 +1,7 @@
 import createListItem from "../dom/board-list-card.js";
+import board from "../script.js";
 import getBoardList from "../utils/3-get-board-list.js";
+import getAllBoard from "../utils/get-all-board.js";
 
 function getparam() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -25,7 +27,7 @@ function renderBoardListCard() {
     const boardId = getparam();
     if (boardId != 0) {
         getBoardList(boardId).then((listData) => {
-            console.log(listData)
+            console.log(listData);
             const listNameId = listData.map((list) => {
                 return {
                     name: list.name,
@@ -33,11 +35,22 @@ function renderBoardListCard() {
                 };
             });
             console.log("listName", listNameId);
-            listNameId.forEach((element) => createListCard(element.name, element.id));
+            listNameId.forEach((element) =>
+                createListCard(element.name, element.id)
+            );
         });
     }
 }
 
+getAllBoard().then((data) => {
+    const allBoard = data.map((board) => {
+        return {
+            name: board.name,
+            id: board.id,
+        };
+    });
+    board.createSidebarBoardList(allBoard);
+});
 renderBoardListCard();
 
-export {renderBoardListCard, createListCard, getparam}
+export { renderBoardListCard, createListCard, getparam };

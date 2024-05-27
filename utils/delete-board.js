@@ -6,7 +6,7 @@ function deleteBoard(boardId = process.argv[2]) {
     return fetch(url, { method: "DELETE" }).then((response) => {
         if (response.ok) {
             console.log('board deleted successfully: ')
-            return response;
+            return response.json();
         } else {
             throw new Error(
                 "Failed to delete board with status: " + response.status

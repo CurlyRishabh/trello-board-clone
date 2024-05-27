@@ -1,4 +1,4 @@
-import renderTrelloBoard from "../script.js";
+import board from "../script.js";
 import deleteBoard from "../utils/delete-board.js";
 
 function createPageUrl(boardId){
@@ -61,9 +61,10 @@ function boardItemContainer(boardName, boardId) {
     const buttonText = document.createTextNode("X");
 
     const closeBtn = () => {
-        deleteBoard(boardId);
-        renderTrelloBoard();
-        outerDiv.remove();
+        deleteBoard(boardId).then(data => {
+            outerDiv.remove();
+            board.renderTrelloBoard();
+        })
 
     };
 

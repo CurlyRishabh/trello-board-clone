@@ -1,4 +1,4 @@
-import renderTrelloBoard from "./script.js";
+import board from "./script.js";
 import createBoard from "./utils/2-create-board.js";
 
 function initializeBoardForm() {
@@ -19,7 +19,7 @@ function initializeBoardForm() {
             createBoard(boardName)
                 .then((response) => response.json())
                 .then((data) => {
-                    renderTrelloBoard();
+                    board.renderTrelloBoard();
                 })
                 .catch((error) => console.error(error));
 

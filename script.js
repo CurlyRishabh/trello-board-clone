@@ -9,6 +9,7 @@ let allBoard = [{ name: "Cool", id: "66478339562d4ffb01309cd8" },
   { name: "TempBoard", id: "664d85ca31441ffe781e27f7" },
   { name: "boardListCard", id: "664c766631f31c08732288eb" },
   { name: "warm", id: "664ad2a1a1aa3b48dcb12f9d" }]
+// let allBoard = {}
 
 function renderTrelloBoard() {
     getAllBoard()
@@ -46,8 +47,8 @@ function createContainerBoardList(boardLists) {
 
 renderTrelloBoard();
 
-// custom hardCoded data
+// // custom hardCoded data
 // createSidebarBoardList(allBoard);
 // createContainerBoardList(allBoard);
 
-export default renderTrelloBoard;
+export default {renderTrelloBoard, createSidebarBoardList};
